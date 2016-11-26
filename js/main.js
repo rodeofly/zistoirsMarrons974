@@ -135,6 +135,7 @@
         }
         if (ok) {
           $("body").fireworks();
+          $("#enonce").hide();
           return alert("gagné");
         }
       }

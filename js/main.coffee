@@ -92,6 +92,7 @@ $ ->
             good = true if arrayEqual myTableArray[i], SOLUTION[j]         
           ok = ok and good
       if ok
-        $( "body" ).fireworks() 
+        $( "body" ).fireworks()
+        $( "#enonce" ).hide()
         alert "gagné" 
 
