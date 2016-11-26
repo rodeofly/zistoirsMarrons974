@@ -17,7 +17,7 @@ d = ["Mafate", "Raharianne", "Mussard", "Saint-Paul"]
 e = ["Matouté", "Simangavola", "Carron", "Cilaos"]
 SOLUTION = [a, b ,c , d, e]
 
-$ ->    
+$ ->   
   html = "<tr><th colspan='2' rowspan='2'></th>"
   for c in [0..2]
     html +="<th colspan='5' class='categorie #{HEADERSC[c]}'>#{HEADERSC[c]}</th>"
@@ -67,7 +67,9 @@ $ ->
         $( this ).toggleClass "true false"
   
   $( "#enonce" ).hide()      
-  $( "#soltoggle" ).on "click", -> $( "#enonce" ).toggle()
+  $( "#soltoggle" ).on "click", ->
+    $( "body" ).fireworks( "destroy" ) 
+    $( "#enonce" ).toggle()
  
   $('.menu').selectmenu
     change:  ->
@@ -89,5 +91,7 @@ $ ->
           for j in [0..SOLUTION.length-1]
             good = true if arrayEqual myTableArray[i], SOLUTION[j]         
           ok = ok and good
-      alert "gagné" if ok
+      if ok
+        $( "body" ).fireworks() 
+        alert "gagné" 
 

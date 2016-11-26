@@ -94,6 +94,7 @@
     });
     $("#enonce").hide();
     $("#soltoggle").on("click", function() {
+      $("body").fireworks("destroy");
       return $("#enonce").toggle();
     });
     return $('.menu').selectmenu({
@@ -133,6 +134,7 @@
           }
         }
         if (ok) {
+          $("body").fireworks();
           return alert("gagné");
         }
       }
